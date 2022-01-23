@@ -1,0 +1,2 @@
+      //  config()->set("database.connections.user_database.database","deneme23");
+       // DB::connection("user_database")->table("deneme")->where();
