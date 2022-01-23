@@ -12,7 +12,10 @@ class AdminController extends Controller
 
     public function index()
     {
-        return  view("admin.index");
+        $users = DB::table('users')->get();
+        $pages = DB::table('pages')->get();
+        $posts = DB::table('posts')->get();
+        return  view("admin.index",['users' => $users,'posts' => $posts,'pages' => $pages,'posts'=>$posts]);
     }
 
 

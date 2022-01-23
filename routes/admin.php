@@ -38,3 +38,9 @@ use Illuminate\Support\Facades\Route;
 
     Route::group(['prefix'=>"/security/policy",'as'=>"security_policy."],base_path("routes/admin/security_policy.php"));
 
+    Route::group(['prefix'=>"/template/hooks",'as'=>"TemplateHooks."],base_path("routes/admin/TemplateHooks.php"));
+
+    Route::group(['prefix'=>"/template/widgets",'as'=>"TemplateHooksComponentWidgets."],base_path("routes/admin/TemplateHooksComponentWidgets.php"));
+
+    Route::group(['prefix'=>"/template/component/widgets",'as'=>"ComponentWidgets."],base_path("routes/admin/ComponentWidgets.php"));
+

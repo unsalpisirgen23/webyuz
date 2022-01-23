@@ -12,7 +12,6 @@ class HeroSection extends BaseComponent
 
     public function render($args = [])
     {
-
         return $this->view("contents.hero-section",['args'=>$args])->render();
     }
 

@@ -71,6 +71,19 @@
 
                                     <div class="form-group row mb-4">
                                         <div class="form-group col-6 ml-auto mr-auto mb-4">
+                                            <div class="section-title mt-0">Tema</div>
+
+                                            <select id="themeSelect" class="form-control" name="template_id">
+                                                <option value="">Tema Seçiniz</option>
+                                                @foreach($themes as $theme)
+                                                    <option value="{!! $theme->id !!}">{!! $theme->name !!}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-4">
+                                        <div class="form-group col-6 ml-auto mr-auto mb-4">
                                             <div class="section-title mt-0">Durum</div>
                                             <select class="form-control" name="status">
                                                 <option value="1" {{$site->status==1 ? "selected" : null }} >Aktif</option>

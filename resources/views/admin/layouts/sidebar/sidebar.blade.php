@@ -54,6 +54,40 @@
             <li class="menu-header">İşlemler</li>
 
 
+            @permission("Sidebar Show","Template Settings")
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Tema Yerleşimleri</span></a>
+                <ul class="dropdown-menu">
+                    @permission("Create","Sites")<li><a class="nav-link beep beep-sidebar" href="{{route("admin.TemplateHooks.create")}}">Bileşen Ekle</a></li>@endpermission
+                    @permission("List","Sites")<li><a class="nav-link" href="{{route("admin.TemplateHooks.index")}}">Bileşen Listele</a></li>@endpermission
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Component İşlemleri</span></a>
+                <ul class="dropdown-menu">
+                    @permission("Create","Sites")<li><a class="nav-link beep beep-sidebar" href="{{route("admin.ComponentWidgets.create")}}">Component Ekle</a></li>@endpermission
+                    @permission("List","Sites")<li><a class="nav-link" href="{{route("admin.ComponentWidgets.index")}}">Component Listele</a></li>@endpermission
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>İlişki İşlemleri</span></a>
+                <ul class="dropdown-menu">
+                    @permission("Create","Sites")<li><a class="nav-link beep beep-sidebar" href="{{route("admin.TemplateHooksComponentWidgets.create")}}">İlişki Ekle</a></li>@endpermission
+                    @permission("List","Sites")<li><a class="nav-link" href="{{route("admin.TemplateHooksComponentWidgets.index")}}">İlişki Listele</a></li>@endpermission
+                </ul>
+            </li>
+            @endpermission
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-palette"></i> <span>Tasarım</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{route("admin.appearance.menus.index")}}">Menüler</a></li>
+                    <li><a class="nav-link" href="{{route("admin.appearance.temps.index")}}">Tema Seçimi</a></li>
+                    <li><a class="nav-link" href="{{route("admin.templates.create")}}">Tema Oluştur</a></li>
+                    <li><a class="nav-link" href="{{route("admin.templates.index")}}">Temalar</a></li>
+                </ul>
+            </li>
+
 
             @permission("Sidebar Show","Users")
             <li class="nav-item dropdown">
@@ -86,15 +120,6 @@
 
             @permission("Assignment","GroupPolicy") @endpermission
 
-
-            <li class="menu-header">Müdüller</li>
-
-            @permission("Sidebar Show","Modules")
-            {!! adminHook()->doAction("admin_menu_bar") !!}
-            @endpermission
-
-
-            <li class="menu-header">Diğer Özellikler</li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown">  <i class="fas fa-chalkboard-teacher"></i> <span>Site İşlemleri</span></a>
                 <ul class="dropdown-menu">
@@ -104,21 +129,20 @@
                 </ul>
             </li>
 
+            <li class="menu-header">Müdüller</li>
+
+            @permission("Sidebar Show","Modules")
+            {!! adminHook()->doAction("admin_menu_bar") !!}
+            @endpermission
+
+
+            <li class="menu-header">Diğer Özellikler</li>
+
+
             <li class="nav-item">
                 <a href="{{route("admin.base_modules.index")}}" class="nav-link"><i class="fas fa-plug"></i><span>Modül İşlemleri</span></a>
             </li>
 
-
-
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-palette"></i> <span>Tasarım</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{route("admin.appearance.menus.index")}}">Menüler</a></li>
-                    <li><a class="nav-link" href="{{route("admin.appearance.temps.index")}}">Tema Seçimi</a></li>
-                    <li><a class="nav-link" href="{{route("admin.templates.create")}}">Tema Oluştur</a></li>
-                    <li><a class="nav-link" href="{{route("admin.templates.index")}}">Temalar</a></li>
-                </ul>
-            </li>
 
 
 

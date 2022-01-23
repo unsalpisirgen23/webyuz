@@ -19,7 +19,6 @@ class CreateTemplateHooksComponentWidgetsTable extends Migration
             $table->integer("template_hooks_id")->nullable();
             $table->integer("component_widget_id")->nullable();
             $table->integer("status")->nullable();
-            $table->integer("user_id")->nullable();
             $table->text("component_style")->nullable();
             $table->timestamps();
         });

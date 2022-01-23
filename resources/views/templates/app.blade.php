@@ -14,7 +14,7 @@
 </head>
 <body>
 <!-- ======= get_template_widget ======= -->
-{!! templateHook()->doAction("get_template_widget_group",['action_group'=>"headers",'domain'=>@$domain]) !!}
+{!! templateHook()->doAction("get_template_widget_group",['action_group'=>"headers"]) !!}
 <!-- ======= end_get_template_widget ======= -->
 <!-- End Hero -->
 <!-- #main -->
@@ -23,7 +23,7 @@
 </main>
 <!-- End #main -->
 <!-- ======= Footer ======= -->
-{!! templateHook()->doAction("get_template_widget_group",['action_group'=>"footers",'domain'=>@$domain]) !!}
+{!! templateHook()->doAction("get_template_widget_group",['action_group'=>"footers"]) !!}
 <!-- End Footer -->
 {!! doAction("get_script_section") !!}
 </body>

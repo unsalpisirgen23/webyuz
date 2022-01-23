@@ -10,8 +10,6 @@ class CtaSection extends BaseComponent
 
     public function render($args = [])
     {
-
-
         if (Schema::hasTable("component_widget_contents")){
 
             $widgetContent = DB::table("component_widget_contents")

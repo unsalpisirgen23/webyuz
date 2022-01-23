@@ -9,14 +9,11 @@ class Navbar extends BaseComponent
 
         public function render($args = [])
         {
-            $widgetContent = DB::table("component_widget_contents")
-                ->where("template_id","=",$args->template_id)
-                ->where("component_widget_id","=",$args->component_widget_id)
-                ->first();
-            if ($widgetContent)
+            $settings = get_site_database()->table("settings")->first();
+            if ($settings)
             {
-                $item = json_decode($widgetContent->content)[0];
-                return $this->view("headers.navbar",['args'=>$args,'item'=>$item])->render();
+                $menu = get_nav_menu("header-menu");
+                return $this->view("headers.navbar",['args'=>$args,'settings'=>$settings,'menu'=>$menu])->render();
             }
             return $this->view("headers.navbar",['args'=>$args])->render();
         }

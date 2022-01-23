@@ -12,7 +12,7 @@ class AppearanceMenuController extends Controller
 {
      public function index()
      {
-         $menus = DB::table("menus")->get();
+         $menus = DB::connection("user_database")->table("menus")->get();
          return view("admin.appearance.menus.index",['menus'=>$menus]);
      }
 
@@ -26,7 +26,7 @@ class AppearanceMenuController extends Controller
              $menuTitle = $request->post("menuTitle");
              $content = json_encode($request->post("content"));
              $menu_link = Permalink::get($menuTitle);
-            DB::table("menus")->insert(
+         DB::connection("user_database")->table("menus")->insert(
              [
                  'status'=>1,
                  'menu_title'=>$menuTitle,
@@ -38,7 +38,7 @@ class AppearanceMenuController extends Controller
 
      public function edit($id)
      {
-         $menu = DB::table("menus")->where("id","=",$id)->first();
+         $menu = DB::connection("user_database")->table("menus")->where("id","=",$id)->first();
             if ($menu)
             {
                 $menuContent = Menu::getMenuItems(json_decode($menu->content));
@@ -51,7 +51,7 @@ class AppearanceMenuController extends Controller
          $menuTitle = $request->post("menuTitle");
          $content = json_encode($request->post("content"));
          $menu_link = Permalink::get($menuTitle);
-         DB::table("menus")->where("id","=",$request->post("id"))->update(
+         DB::connection("user_database")->table("menus")->where("id","=",$request->post("id"))->update(
              [
                  'status'=>1,
                  'menu_title'=>$menuTitle,
@@ -64,7 +64,7 @@ class AppearanceMenuController extends Controller
 
      public function destroy($id)
      {
-         DB::table("menus")->where("id","=",$id)->delete();
+         DB::connection("user_database")->table("menus")->where("id","=",$id)->delete();
          return redirect()->route("admin.appearance.menus.index")->with("success","Tebrikler menü silindi");
      }
 

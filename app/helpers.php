@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Schema;
 
 function base_url(){
-    return url("/");
+    return env("APP_URL");
 }
 
 function import($path, $data = [])
@@ -27,14 +27,26 @@ function get_asset($value = '')
 
 function get_public_assets($value)
 {
-   return base_url()."/assets/".\App\Helpers\Template::isActive()."/".$value;
+   return base_url()."/assets/".$value;
 }
 
+
+function get_template($id = "")
+{
+    $templaate = DB::table("templates")->get();
+            if ($templaate->count() > 0)
+            {
+                foreach ($templaate as $temp)
+                {
+                    echo '<option  '.($id == $temp->id ? "selected" : null).' value="'.$temp->id.'">'.$temp->name.'</option>';
+                }
+            }
+}
 
 
 function get_nav_menu($menu_link)
 {
-    $menu = \Illuminate\Support\Facades\DB::table("menus")
+    $menu = get_site_database()->table("menus")
         ->where("status", "=", 1)
         ->where('menu_link', "=", $menu_link)
         ->first();
@@ -288,7 +300,7 @@ function getHeaderNavbarMenu2($menus = [],$path = "")
 addAction('get_header_nav_menu','get_header_nav_menu_function');
 
 
-if (!function_exists('get_header_nav_menu_function')) {
+
     function get_header_nav_menu_function($menus = [])
     {
         $i = 0;
@@ -312,7 +324,6 @@ if (!function_exists('get_header_nav_menu_function')) {
 
     }
 
-}
 
 
 addAction('get_header_nav_menu', 'get_header_nav_menu_function');
@@ -511,7 +522,8 @@ function get_style_section_function()
     $styles .= doAction("widget_style_tag",['href'=>get_public_assets("vendor/aos/aos.css")]);
     $styles .= doAction("widget_style_tag",['href'=>get_public_assets("vendor/bootstrap/css/bootstrap.min.css")]);
     $styles .= doAction("widget_style_tag",['href'=>get_public_assets("vendor/bootstrap-icons/bootstrap-icons.css")]);
-    $styles .= doAction("widget_style_tag",['href'=>get_public_assets("vendor/boxicons/css/boxicons.min.css")]);
+    $styles .= '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">';
+    $styles .= '<script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>';
     $styles .= doAction("widget_style_tag",['href'=>get_public_assets("vendor/glightbox/css/glightbox.min.css")]);
     $styles .= doAction("widget_style_tag",['href'=>get_public_assets("vendor/swiper/swiper-bundle.min.css")]);
     $styles .= doAction("widget_style_tag",['href'=>get_public_assets("css/style.css")]);
@@ -560,6 +572,21 @@ function script_function()
 {
 
 }
+
+
+templateHook()->addAction("header_top_bar",\App\System\Components\HeaderTopBar::class);
+templateHook()->addAction("header_navbar",\App\System\Components\Navbar::class);
+templateHook()->addAction("hero_section",\App\System\Components\HeroSection::class);
+templateHook()->addAction("cta_section",\App\System\Components\CtaSection::class);
+templateHook()->addAction("services_section",\App\System\Components\ServicesSection::class);
+templateHook()->addAction("portfolio_section",\App\System\Components\PortfolioSection::class);
+templateHook()->addAction("clients-section",\App\System\Components\ClientsSection::class);
+templateHook()->addAction("others_up_button",\App\System\Components\UpButton::class);
+templateHook()->addAction("footer",\App\System\Components\Footer::class);
+
+addAction("custom_style","style_function");
+
+addAction("custom_script","script_function");
 
 
 
@@ -618,72 +645,39 @@ addAction("home_categories_widget","home_categories_widget");
 
 function get_template_widget_group_function($params = ['action_order'=>""])
 {
-    if (isset($params['domain']))
-    {
-        $domain = $params['domain'];
-
-        $site  = DB::table("sites")
-                 ->join("site_databases","site_databases.id","=","sites.site_database_id")
-                 ->where("sites.domain","=",$domain)
-                 ->first(['site_databases.name as site_database_name']);
-
-        if ($site)
-        {
-            config()->set("database.connections.user_database.database",$site->site_database_name);
-
-            $db = $site->site_database_name;
-
-            $templateHooksComponentWidgets = DB::connection('user_database')
-                ->table("template_hooks_component_widgets")
-                ->join('webyuz_system_db.component_widgets', 'webyuz_system_db.component_widgets.id', '=', 'template_hooks_component_widgets.component_widget_id')
-                ->join('template_hooks', 'template_hooks.id', '=', 'template_hooks_component_widgets.template_hooks_id')
-                ->where('template_hooks.action_group',"=",$params['action_group'])
-                ->get(['template_hooks_component_widgets.id as thcw_id',
-                    'template_hooks_component_widgets.*',
-                    'webyuz_system_db.component_widgets.component_title as component_title',
-                    'webyuz_system_db.component_widgets.component_name as component_name',
-                    'webyuz_system_db.component_widgets.component_group as component_group',
-                    'template_hooks.action_title as action_title',
-                    'template_hooks.action_group as action_group',
-                    'template_hooks_component_widgets.*'
-                ]);
-            foreach ($templateHooksComponentWidgets as $widget) {
-                echo templateHook()->doAction($widget->component_name,$widget);
-            }
-        }
-        else{
-            die( "Bir site bulunamadı." );
-        }
-    }
-    else
-    {
+        $domain = request()->getHost();
         $templateHooksComponentWidgets = DB::table("template_hooks_component_widgets")
             ->join('component_widgets', 'component_widgets.id', '=', 'template_hooks_component_widgets.component_widget_id')
             ->join('template_hooks', 'template_hooks.id', '=', 'template_hooks_component_widgets.template_hooks_id')
+            ->join("templates","templates.id","=","template_hooks_component_widgets.template_id")
+            ->join("sites","sites.template_id","=","templates.id")
             ->where('template_hooks.action_group',"=",$params['action_group'])
+            ->where("sites.domain","=",$domain)
             ->get(['template_hooks_component_widgets.id as thcw_id',
                 'template_hooks_component_widgets.*',
                 'component_widgets.component_title as component_title',
                 'component_widgets.component_name as component_name',
                 'component_widgets.component_group as component_group',
                 'template_hooks.action_title as action_title',
-                'template_hooks.action_group as action_group',
-                'template_hooks_component_widgets.*'
+                'template_hooks.action_group as action_group'
             ]);
         foreach ($templateHooksComponentWidgets as $widget) {
-            echo templateHook()->doAction($widget->component_name,$widget,['domain'=>""]);
+            echo templateHook()->doAction($widget->component_name,$widget);
         }
-    }
-
-    if (Schema::hasTable("component_widgets") && Schema::hasTable("template_hooks")) {
-
-    }
 }
 
 templateHook()->addAction("get_template_widget_group","get_template_widget_group_function");
 
 
-
+function get_site_database()
+{
+    $domain = request()->getHost();
+    $site = DB::table("sites")->where("sites.domain","=",$domain)->first();
+    if ($site){
+        config()->set("database.connections.user_database.database",$site->database_name);
+       return  DB::connection("user_database");
+    }
+}
 
 
 function permission($name,$domain)
@@ -730,22 +724,3 @@ function user_data($id){
     }
 
 }
-
-
-
-
-
-templateHook()->addAction("header_top_bar",\App\System\Components\HeaderTopBar::class);
-templateHook()->addAction("header_navbar",\App\System\Components\Navbar::class);
-templateHook()->addAction("hero_section",\App\System\Components\HeroSection::class);
-templateHook()->addAction("cta_section",\App\System\Components\CtaSection::class);
-templateHook()->addAction("services_section",\App\System\Components\ServicesSection::class);
-templateHook()->addAction("portfolio_section",\App\System\Components\PortfolioSection::class);
-templateHook()->addAction("clients-section",\App\System\Components\ClientsSection::class);
-templateHook()->addAction("others_up_button",\App\System\Components\UpButton::class);
-templateHook()->addAction("footer",\App\System\Components\Footer::class);
-
-addAction("custom_style","style_function");
-
-addAction("custom_script","script_function");
-

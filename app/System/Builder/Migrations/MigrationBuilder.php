@@ -88,9 +88,53 @@ class MigrationBuilder
             $table->timestamp('updated_at')->nullable();
         });
 
+        Schema::connection('user_database')->create('template_styles', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id')->nullable();
+            $table->integer("template_id")->nullable();
+            $table->text("content")->nullable();
+            $table->timestamps();
+        });
 
+        Schema::connection('user_database')->create('component_widget_contents', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id')->nullable();
+            $table->integer("template_id")->nullable();
+            $table->integer("component_widget_id")->nullable();
+            $table->text('content')->nullable();
+            $table->timestamps();
+        });
 
+        Schema::connection('user_database')->create('template_hooks', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id')->nullable();
+            $table->integer("template_id")->nullable();
+            $table->integer("component_widget_id")->nullable();
+            $table->string("action_title",255)->nullable();
+            $table->string("action_group",200)->nullable();
+            $table->integer("action_status")->default(0)->nullable();
+            $table->timestamps();
+        });
 
+        Schema::connection('user_database')->create('templates', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id')->nullable();
+            $table->string('name')->nullable();
+            $table->integer('status')->default(0)->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+        });
+
+        Schema::connection('user_database')->create('template_hooks_component_widgets', function (Blueprint $table) {
+            $table->id();
+            $table->integer("template_id")->nullable();
+            $table->integer("template_hooks_id")->nullable();
+            $table->integer("component_widget_id")->nullable();
+            $table->integer("status")->nullable();
+            $table->integer("user_id")->nullable();
+            $table->text("component_style")->nullable();
+            $table->timestamps();
+        });
 
 
     }
@@ -105,6 +149,11 @@ class MigrationBuilder
         Schema::connection('user_database')->dropIfExists('tags');
         Schema::connection('user_database')->dropIfExists('pages');
         Schema::connection('user_database')->dropIfExists('menus');
+        Schema::connection('user_database')->dropIfExists('template_styles');
+        Schema::connection('user_database')->dropIfExists('component_widget_contents');
+        Schema::connection('user_database')->dropIfExists('template_hooks');
+        Schema::connection('user_database')->dropIfExists('templates');
+        Schema::connection('user_database')->dropIfExists('template_hooks_component_widgets');
 
     }
 

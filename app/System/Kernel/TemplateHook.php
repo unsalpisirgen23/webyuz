@@ -52,6 +52,7 @@ class TemplateHook
                    if (method_exists(self::$classInstance,"render"))
                    {
                     $result[$to] = self::$classInstance->render($args);
+                       self::$classInstance = null;
                    }
                 }
                 if (function_exists($function))

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
+class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
@@ -16,6 +16,8 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -31,10 +33,8 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '0b47d6d4a00ca9112ba3953b49e7c9a4' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/helper.php',
     );
@@ -614,6 +614,7 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'App\\Http\\Controllers\\Admin\\AppearanceMenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AppearanceMenuController.php',
         'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
         'App\\Http\\Controllers\\Admin\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CommentController.php',
+        'App\\Http\\Controllers\\Admin\\ComponentWidgetController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ComponentWidgetController.php',
         'App\\Http\\Controllers\\Admin\\DesignController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DesignController.php',
         'App\\Http\\Controllers\\Admin\\Layout\\MenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Layout/MenuController.php',
         'App\\Http\\Controllers\\Admin\\MenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/MenuController.php',
@@ -629,6 +630,8 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'App\\Http\\Controllers\\Admin\\SiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SiteController.php',
         'App\\Http\\Controllers\\Admin\\TagController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TagController.php',
         'App\\Http\\Controllers\\Admin\\TemplateController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TemplateController.php',
+        'App\\Http\\Controllers\\Admin\\TemplateHookController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TemplateHookController.php',
+        'App\\Http\\Controllers\\Admin\\TemplateHooksComponentWidgetController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TemplateHooksComponentWidgetController.php',
         'App\\Http\\Controllers\\Admin\\TemplatesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TemplatesController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Admin\\UserRoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserRoleController.php',
@@ -676,7 +679,6 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'App\\Listeners\\UserListener' => __DIR__ . '/../..' . '/app/Listeners/UserListener.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
-        'App\\Models\\ComponentWidget' => __DIR__ . '/../..' . '/app/Models/ComponentWidget.php',
         'App\\Models\\ComponentWidgetContent' => __DIR__ . '/../..' . '/app/Models/ComponentWidgetContent.php',
         'App\\Models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
         'App\\Models\\Module' => __DIR__ . '/../..' . '/app/Models/Module.php',
@@ -1173,11 +1175,13 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'Faker\\Calculator\\Isbn' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Isbn.php',
         'Faker\\Calculator\\Luhn' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Luhn.php',
         'Faker\\Calculator\\TCNo' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/TCNo.php',
+        'Faker\\ChanceGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/ChanceGenerator.php',
         'Faker\\Core\\Barcode' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Barcode.php',
         'Faker\\Core\\Blood' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Blood.php',
         'Faker\\Core\\Coordinates' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Coordinates.php',
         'Faker\\Core\\File' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/File.php',
         'Faker\\Core\\Number' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Number.php',
+        'Faker\\Core\\Uuid' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Uuid.php',
         'Faker\\Core\\Version' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Core/Version.php',
         'Faker\\DefaultGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/DefaultGenerator.php',
         'Faker\\Documentor' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Documentor.php',
@@ -1199,6 +1203,7 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'Faker\\Extension\\NumberExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/NumberExtension.php',
         'Faker\\Extension\\PersonExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/PersonExtension.php',
         'Faker\\Extension\\PhoneNumberExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/PhoneNumberExtension.php',
+        'Faker\\Extension\\UuidExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/UuidExtension.php',
         'Faker\\Extension\\VersionExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/VersionExtension.php',
         'Faker\\Factory' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Factory.php',
         'Faker\\Generator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Generator.php',
@@ -3480,9 +3485,6 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'Mockery\\Undefined' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Undefined.php',
         'Mockery\\VerificationDirector' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationDirector.php',
         'Mockery\\VerificationExpectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationExpectation.php',
-        'Modules\\ComponentWidgets\\Controllers\\ComponentWidgetController' => __DIR__ . '/../..' . '/Modules/ComponentWidgets/Controllers/ComponentWidgetController.php',
-        'Modules\\ComponentWidgets\\Installation' => __DIR__ . '/../..' . '/Modules/ComponentWidgets/Installation.php',
-        'Modules\\ComponentWidgets\\Models\\ComponentWidget' => __DIR__ . '/../..' . '/Modules/ComponentWidgets/Models/ComponentWidget.php',
         'Modules\\Contact\\ContactRequest' => __DIR__ . '/../..' . '/Modules/Contact/ContactRequest.php',
         'Modules\\Contact\\Controllers\\ContactController' => __DIR__ . '/../..' . '/Modules/Contact/Controllers/ContactController.php',
         'Modules\\Contact\\Installation' => __DIR__ . '/../..' . '/Modules/Contact/Installation.php',
@@ -3512,12 +3514,6 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
         'Modules\\Teams\\Controllers\\TeamsController' => __DIR__ . '/../..' . '/Modules/Teams/Controllers/TeamsController.php',
         'Modules\\Teams\\Installation' => __DIR__ . '/../..' . '/Modules/Teams/Installation.php',
         'Modules\\Teams\\Models\\Teams' => __DIR__ . '/../..' . '/Modules/Teams/Models/Teams.php',
-        'Modules\\TemplateHooksComponentWidgets\\Controllers\\TemplateHooksComponentWidgetController' => __DIR__ . '/../..' . '/Modules/TemplateHooksComponentWidgets/Controllers/TemplateHooksComponentWidgetController.php',
-        'Modules\\TemplateHooksComponentWidgets\\Installation' => __DIR__ . '/../..' . '/Modules/TemplateHooksComponentWidgets/Installation.php',
-        'Modules\\TemplateHooksComponentWidgets\\Models\\TemplateHooksComponentWidget' => __DIR__ . '/../..' . '/Modules/TemplateHooksComponentWidgets/Models/TemplateHooksComponentWidget.php',
-        'Modules\\TemplateHooks\\Controllers\\TemplateHookController' => __DIR__ . '/../..' . '/Modules/TemplateHooks/Controllers/TemplateHookController.php',
-        'Modules\\TemplateHooks\\Installation' => __DIR__ . '/../..' . '/Modules/TemplateHooks/Installation.php',
-        'Modules\\TemplateHooks\\Models\\TemplateHook' => __DIR__ . '/../..' . '/Modules/TemplateHooks/Models/TemplateHook.php',
         'Modules\\Testimonials\\Controllers\\TestimonialsController' => __DIR__ . '/../..' . '/Modules/Testimonials/Controllers/TestimonialsController.php',
         'Modules\\Testimonials\\Installation' => __DIR__ . '/../..' . '/Modules/Testimonials/Installation.php',
         'Modules\\Testimonials\\Models\\Testimonials' => __DIR__ . '/../..' . '/Modules/Testimonials/Models/Testimonials.php',
@@ -5945,10 +5941,10 @@ class ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit2dfa2970f7bf55e795d7e850fbcc30b3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit39ad6948363c2e9dd0f1353713664a61::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit39ad6948363c2e9dd0f1353713664a61::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit39ad6948363c2e9dd0f1353713664a61::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit39ad6948363c2e9dd0f1353713664a61::$classMap;
 
         }, null, ClassLoader::class);
     }

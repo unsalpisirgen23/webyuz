@@ -17,11 +17,9 @@ class HomeController extends Controller
         return view("templates.index");
     }
 
-    public function subdomain($domain){
-
-
-            return view('templates.index',['domain'=>$domain]);
-
+    public function subdomain($domain)
+    {
+            return view('templates.index');
     }
 
 

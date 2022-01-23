@@ -19,7 +19,7 @@
        <h4>Toplam Kullanıcı</h4>
       </div>
       <div class="card-body">
-
+      {{ $users->count() }}
       </div>
      </div>
     </div>
@@ -35,7 +35,7 @@
        <h4>İçerik</h4>
       </div>
       <div class="card-body">
-
+       {{ $posts->count() }}
       </div>
      </div>
     </div>
@@ -51,7 +51,7 @@
        <h4>Sayfa</h4>
       </div>
       <div class="card-body">
-
+       {{ $pages->count() }}
 
       </div>
      </div>

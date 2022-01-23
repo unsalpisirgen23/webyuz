@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'da3202cf2c7f8c4c0a2f854d3aeb915df0238511',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -131,12 +131,12 @@
             'dev_requirement' => true,
         ),
         'fakerphp/faker' => array(
-            'pretty_version' => 'v1.17.0',
-            'version' => '1.17.0.0',
+            'pretty_version' => 'v1.18.0',
+            'version' => '1.18.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../fakerphp/faker',
             'aliases' => array(),
-            'reference' => 'b85e9d44eae8c52cca7aa0939483611f7232b669',
+            'reference' => '2e77a868f6540695cf5ebf21e5ab472c65f47567',
             'dev_requirement' => true,
         ),
         'filp/whoops' => array(
@@ -422,12 +422,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'da3202cf2c7f8c4c0a2f854d3aeb915df0238511',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -543,6 +543,9 @@
             'aliases' => array(),
             'reference' => '776f831124e9c62e1a2c601ecc52e776d8bb7220',
             'dev_requirement' => true,
+            'replaced' => array(
+                0 => '1.10.2',
+            ),
         ),
         'nesbot/carbon' => array(
             'pretty_version' => '2.55.2',
@@ -802,8 +805,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
