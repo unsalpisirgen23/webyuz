@@ -40,4 +40,3 @@ Route::post("/categories/ajax/parent_create",
     ->name("api.categories.parent_create");
 
 
-

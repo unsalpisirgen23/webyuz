@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 
     Route::get('/',[App\Http\Controllers\Admin\AdminController::class,'index'])->name('home');
 
-
     Route::group(['prefix'=>"/users",'as'=>"users."],base_path('routes/admin/users.php'));
 
     Route::group(['prefix'=>"/user_roles",'as'=>"user_roles."],base_path("routes/admin/user_roles.php"));
@@ -43,4 +42,5 @@ use Illuminate\Support\Facades\Route;
     Route::group(['prefix'=>"/template/widgets",'as'=>"TemplateHooksComponentWidgets."],base_path("routes/admin/TemplateHooksComponentWidgets.php"));
 
     Route::group(['prefix'=>"/template/component/widgets",'as'=>"ComponentWidgets."],base_path("routes/admin/ComponentWidgets.php"));
+
 

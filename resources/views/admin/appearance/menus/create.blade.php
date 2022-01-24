@@ -130,7 +130,7 @@
                                 <div class="card-body pl-3 pr-3 pb-3">
                                     <form action="javascript:void" id="FormPages">
                                         <ul class="pag-list">
-                                            @foreach(\App\Models\Page::all()->where("status","=",1) as $page)
+                                            @foreach(get_site_database()->table("pages")->where("status","=",1)->get() as $page)
                                                 <li>
                                                     <label>
                                                         <input type="checkbox" name="menuItem[]"
@@ -168,7 +168,7 @@
                                 <div class="card-body pl-3 pr-3 pb-3">
                                     <form action="javascript:void" id="formCategories">
                                         <ul class="pag-list">
-                                            @foreach(\App\Models\Category::all()->where("status","=",1) as $page)
+                                            @foreach(get_site_database()->table("categories")->where("status","=",1)->get() as $page)
                                             <li>
                                                 <label>
                                                     <input type="checkbox" name="menuItem[]"

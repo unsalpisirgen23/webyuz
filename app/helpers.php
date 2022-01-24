@@ -680,6 +680,7 @@ function get_site_database()
 }
 
 
+
 function permission($name,$domain)
 {
          return  \App\System\Kernel\Permission::getInstance()

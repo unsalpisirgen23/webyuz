@@ -13,6 +13,8 @@ Route::get('/admin',[App\Http\Controllers\Admin\AdminController::class,'index'])
 
 Route::post("/login/authentication",[App\Http\Controllers\Auth\AuthController::class,"authentication"])->name("login_authentication");
 
+
+
 });
 
 

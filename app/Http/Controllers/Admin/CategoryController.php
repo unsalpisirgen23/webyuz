@@ -20,14 +20,13 @@ class CategoryController extends Controller
 
     public function indexAjax()
     {
-        return datatables(DB::connection("user_database")->table("categories")->get())->make(true);
+        return datatables(get_site_database()->table("categories")->get())->make(true);
     }
 
     public function parent_index(Request  $request)
     {
-        $category = DB::connection("user_database")->table("categories");
+        $category = get_site_database()->table("categories");
         $category->where('id',"=",$request->post("id"));
-
      return json_encode($category->first());
     }
 
@@ -36,7 +35,7 @@ class CategoryController extends Controller
         $name = $request->post("name");
         $id = $request->post("parent_id");
         $status = $request->post("status");
-        $category = DB::connection("user_database")->table("categories")->insert([
+        $category = get_site_database()->table("categories")->insert([
                 'name'=>$name,
             'parent_id'=>$id,
             'status'=>$status
@@ -47,7 +46,7 @@ class CategoryController extends Controller
 
     public function option_select()
     {
-        $categories = DB::connection("user_database")->table("categories")->get();
+        $categories = get_site_database()->table("categories")->get();
         $response = [];
         foreach ($categories as $category)
         {
@@ -70,15 +69,17 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $request->validated();
-        $insert = DB::connection("user_database")->table("categories")->insert($request->postCategory());
+print_r($request->postCategory());
+        $insert = get_site_database()->table("categories")->insert($request->postCategory());
         if ($insert)
-            return redirect()->route("admin.categories.show",DB::getPdo()->lastInsertId());
+            return redirect()->route("admin.categories.show",get_site_database()->getPdo()->lastInsertId());
     }
 
 
     public function show($id)
     {
         if($id != null){
+            config()->set("database.connections.user_database.database",session()->get("database_name"));
             $category = DB::connection("user_database")->table("categories")->where('id',"=",$id)->first();
             return view("admin.categories.show",['category'=>$category]);
         }
@@ -87,6 +88,7 @@ class CategoryController extends Controller
 
     public function edit(Request $request,$id)
     {
+        config()->set("database.connections.user_database.database",session()->get("database_name"));
         $category = DB::connection("user_database")->table("categories")->where('id',"=",$request->get("id"))->first();
         echo json_encode($category);
     }
@@ -94,6 +96,7 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
+        config()->set("database.connections.user_database.database",session()->get("database_name"));
             $id = $request->post("id");
             $name = $request->post("name");
             $status = $request->post("status");
@@ -109,6 +112,7 @@ class CategoryController extends Controller
 
     public function destroy(Request $request,$id)
     {
+        config()->set("database.connections.user_database.database",session()->get("database_name"));
         $delete = DB::connection("user_database")->table("categories")->where("id","=",$request->post("id"))->delete();
         if ($delete)
             return  json_encode(['success'=>"Tebrikler kategori başarıyla silindi."]);
@@ -117,6 +121,7 @@ class CategoryController extends Controller
 
     public function all_delete(Request $request)
     {
+        config()->set("database.connections.user_database.database",session()->get("database_name"));
         $ids = $request->post("ids");
         $delete = "";
         foreach ($ids as $id)
