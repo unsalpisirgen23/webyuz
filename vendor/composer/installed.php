@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'da3202cf2c7f8c4c0a2f854d3aeb915df0238511',
+        'reference' => '4ab8757feb059f4b23cb94811249987ca61e6aac',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -422,12 +422,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'da3202cf2c7f8c4c0a2f854d3aeb915df0238511',
+            'reference' => '4ab8757feb059f4b23cb94811249987ca61e6aac',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -543,17 +543,14 @@
             'aliases' => array(),
             'reference' => '776f831124e9c62e1a2c601ecc52e776d8bb7220',
             'dev_requirement' => true,
-            'replaced' => array(
-                0 => '1.10.2',
-            ),
         ),
         'nesbot/carbon' => array(
-            'pretty_version' => '2.55.2',
-            'version' => '2.55.2.0',
+            'pretty_version' => '2.56.0',
+            'version' => '2.56.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nesbot/carbon',
             'aliases' => array(),
-            'reference' => '8c2a18ce3e67c34efc1b29f64fe61304368259a2',
+            'reference' => '626ec8cbb724cd3c3400c3ed8f730545b744e3f4',
             'dev_requirement' => false,
         ),
         'nette/schema' => array(
@@ -566,12 +563,12 @@
             'dev_requirement' => false,
         ),
         'nette/utils' => array(
-            'pretty_version' => 'v3.2.6',
-            'version' => '3.2.6.0',
+            'pretty_version' => 'v3.2.7',
+            'version' => '3.2.7.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nette/utils',
             'aliases' => array(),
-            'reference' => '2f261e55bd6a12057442045bf2c249806abc1d02',
+            'reference' => '0af4e3de4df9f1543534beab255ccf459e7a2c99',
             'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(
@@ -710,12 +707,12 @@
             'dev_requirement' => true,
         ),
         'phpunit/phpunit' => array(
-            'pretty_version' => '9.5.12',
-            'version' => '9.5.12.0',
+            'pretty_version' => '9.5.13',
+            'version' => '9.5.13.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
-            'reference' => '93d4bf4c37aec6384bb9e5d390d9049a463a7256',
+            'reference' => '597cb647654ede35e43b137926dfdfef0fb11743',
             'dev_requirement' => true,
         ),
         'psr/container' => array(
@@ -805,8 +802,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1302,12 +1299,12 @@
             'dev_requirement' => false,
         ),
         'voku/portable-ascii' => array(
-            'pretty_version' => '1.5.6',
-            'version' => '1.5.6.0',
+            'pretty_version' => '1.6.0',
+            'version' => '1.6.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../voku/portable-ascii',
             'aliases' => array(),
-            'reference' => '80953678b19901e5165c56752d087fc11526017c',
+            'reference' => '1f8b372a927ab2d17dbdab443aefbfe6a5354284',
             'dev_requirement' => false,
         ),
         'webmozart/assert' => array(

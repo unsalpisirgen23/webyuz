@@ -8,6 +8,6 @@ class LastInsert
 {
     public static function get_id()
     {
-       return DB::getPdo()->lastInsertId();
+       return  get_site_database()->getPdo()->lastInsertId();
     }
 }

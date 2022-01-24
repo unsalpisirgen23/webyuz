@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class AdminController extends Controller
 {
@@ -12,10 +13,14 @@ class AdminController extends Controller
 
     public function index()
     {
-        $users = DB::table('users')->get();
-        $pages = DB::table('pages')->get();
-        $posts = DB::table('posts')->get();
-        return  view("admin.index",['users' => $users,'posts' => $posts,'pages' => $pages,'posts'=>$posts]);
+        if (!Schema::hasTable("pages") && !Schema::hasTable("posts")){
+            $users = DB::table('users')->get();
+            $pages = get_site_database()?->table('pages')->get();
+            $posts = get_site_database()?->table('posts')->get();
+            return  view("admin.index",['users' => $users,'posts' => $posts,'pages' => $pages,'posts'=>$posts]);
+        }else{
+
+        }
     }
 
 

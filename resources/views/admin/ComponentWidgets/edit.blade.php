@@ -42,36 +42,19 @@
 
 
                                       <div class="form-group row mb-4">
-                                          <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Başlık</label>
-                                          <div class="col-sm-12 col-md-7">
-                                              <input type="text" class="form-control" value="{{$component_widget->component_title}}" name="component_title">
-                                          </div>
-                                      </div>
-
-
-                                      <div class="form-group row mb-4">
                                           <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Bileşenler</label>
                                           <div class="col-sm-12 col-md-7 h-100">
-                                              <select name="component_name" id="template_id" class="form-control">
+                                              <select name="component_name" id="component_name" class="form-control">
                                                   @foreach ($hooks as $hook=>$toHook)
-                                                      <option value="{!! $hook !!}" {{$component_widget->component_name == $hook ? "selected" : null}} >{!! $hook !!}</option>
+                                                      @if(\Illuminate\Support\Facades\DB::table("component_widgets")->where("component_name","=",$component_widget->component_name)->get()->count() > 0 && $hook != "get_template_widget_group")
+                                                          <option {{$component_widget->component_name == $hook ? "selected" : null}} value="{!! $hook !!}">{!! $hook !!}</option>
+                                                      @endif
                                                   @endforeach
                                               </select>
                                           </div>
                                       </div>
 
 
-
-                                      <div class="form-group row mb-4">
-                                          <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Grup</label>
-                                          <div class="col-sm-12 col-md-7 h-100">
-                                              <select name="component_group" id="template_id" class="form-control">
-                                                  <option value="headers" {{$component_widget->component_group == "headers" ? "selected" : null}} >Üst Kısımlar</option>
-                                                  <option value="contents" {{$component_widget->component_group == "contents" ? "selected" : null}} >Orta Kısımlar</option>
-                                                  <option value="footers" {{$component_widget->component_group == "footers" ? "selected" : null}} >Alt Kısımlar</option>
-                                              </select>
-                                          </div>
-                                      </div>
 
 
 

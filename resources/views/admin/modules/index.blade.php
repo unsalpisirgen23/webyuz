@@ -86,9 +86,8 @@
                                                     <form action="{{route("admin.base_modules.update",$module->id)}}" method="post">
                                                         @csrf
                                                         <div class="module-footer">
-                                                            <button class="btn {{$module->module_install == 1  ? "btn-info" : "btn-danger"}}  w-100" name="install" value="{{$module->module_install == 0 ? 1 : 0  }}" >{{$module->module_install == 1  ? "Kaldır" : "Kur"}}</button>
                                                             <input type="hidden" name="status" value="{{$module->module_status}}">
-                                                            <button class="{{$module->module_status == 1 ? "btn-success" : "btn-danger" }}  w-100"  name="is_status" {{$module->module_install == 0  ? 'disabled="disabled"' : ""}}  value="1">{{$module->module_status == 1 ? "Pasif Et" : "Aktif Et" }}</button>
+                                                            <button class="{{$module->module_status == 1 ? "btn-success" : "btn-danger" }}  w-100"  name="is_status"  value="1">{{$module->module_status == 1 ? "Pasif Et" : "Aktif Et" }}</button>
                                                         </div>
                                                     </form>
                                                 </div>

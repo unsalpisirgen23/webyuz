@@ -44,12 +44,28 @@
             @endif
 
             @if(session()->has("database_name"))
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-forward"></i><span>Slaydır</span></a>
+                <ul class="dropdown-menu">
+                    @permission("Create","Sliders")<li><a href="{{route("admin.sliders.create")}}">Slaydır Ekle</a></li>@endpermission
+                    @permission("Create","Sliders")<li><a href="{{route("admin.sliders.index")}}">Slaydır Listele</a></li>@endpermission
+                </ul>
+            </li>
+            @endif
+
+
+
+            @if(session()->has("database_name"))
             @permission("List","Multimedia")
             <li class="nav-item">
                 <a href="{{route("admin.multimedia.index")}}" class="nav-link"><i class="fas fa-video"></i> <span>Multimedya</span></a>
             </li>
             @endpermission
             @endif
+
+
+
+
 
             <li class="menu-header">İşlemler</li>
 
@@ -58,8 +74,8 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Tema Yerleşimleri</span></a>
                 <ul class="dropdown-menu">
-                    @permission("Create","Sites")<li><a class="nav-link beep beep-sidebar" href="{{route("admin.TemplateHooks.create")}}">Bileşen Ekle</a></li>@endpermission
-                    @permission("List","Sites")<li><a class="nav-link" href="{{route("admin.TemplateHooks.index")}}">Bileşen Listele</a></li>@endpermission
+                    @permission("Create","Sites")<li><a class="nav-link beep beep-sidebar" href="{{route("admin.TemplateHooks.create")}}">Yerleşim Ekle</a></li>@endpermission
+                    @permission("List","Sites")<li><a class="nav-link" href="{{route("admin.TemplateHooks.index")}}">Yerleşimleri Listele</a></li>@endpermission
                 </ul>
             </li>
             <li class="nav-item dropdown">
@@ -89,6 +105,85 @@
             </li>
 
 
+            @permission("Sidebar Show","Contact Message")
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-envelope"></i> <span>İletişim Mesajları</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{route("admin.contact.index")}}">İletişim Mesajları</a></li>
+                </ul>
+            </li>
+            @endpermission
+            @permission("Sidebar Show","Faqs")
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-question-circle"></i> <span>S.S.S</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{route("admin.faqs.create")}}">S.S.S. Ekle</a></li>
+                    <li><a class="nav-link" href="{{route("admin.faqs.index")}}">S.S.S. Listele</a></li>
+
+
+                </ul>
+            </li>
+            @endpermission
+
+            @permission("Sidebar Show","Gallery")
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-images"></i> <span>Galeri</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{route("admin.gallery.create")}}">Galeri Ekle</a></li>
+                    <li><a class="nav-link" href="{{route("admin.gallery.index")}}">Galeri Listele</a></li>
+                    <li><a class="nav-link" href="{{route("admin.gallery.galleryCategories.create")}}">Galeri Kategori Ekle</a></li>
+                    <li><a class="nav-link" href="{{route("admin.gallery.galleryCategories.index")}}">Galeri Kategori Listele</a></li>
+
+
+                </ul>
+            </li>
+            @endpermission
+            @permission("Sidebar Show","Scrolling Pictures")
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-sliders-h"></i> <span>Kayan Resimler</span></a>
+                <ul class="dropdown-menu">
+
+                    <li><a class="nav-link" href="{{route("admin.scrollingPictures.create")}}">Kayan Resim Ekle</a></li>
+                    <li><a class="nav-link" href="{{route("admin.scrollingPictures.index")}}">Kayan Resim Listele</a></li>
+
+
+                </ul>
+            </li>
+            @endpermission
+            @permission("Sidebar Show","Services Table")
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-concierge-bell"></i> <span>Hizmetler</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{route("admin.servicesTable.create")}}">Hizmet Ekle</a></li>
+                    <li><a class="nav-link" href="{{route("admin.servicesTable.index")}}">Hizmetleri Listele</a></li>
+
+
+                </ul>
+            </li>
+            @endpermission
+            @permission("Sidebar Show","Teams")
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i> <span>Ekibimiz</span></a>
+                <ul class="dropdown-menu">
+
+                    <li><a class="nav-link" href="{{route("admin.teams.create")}}">Ekibe Ekle</a></li>
+                    <li><a class="nav-link" href="{{route("admin.teams.index")}}">Ekip Listele</a></li>
+                    <li><a class="nav-link" href="{{route("admin.testimonials.index")}}">Testimonials Table</a></li>
+
+                </ul>
+            </li>
+            @endpermission
+            @permission("Sidebar Show","Testimonails")
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-comments"></i> <span>Müşteri Yorumları</span></a>
+                <ul class="dropdown-menu">
+
+                    <li><a class="nav-link" href="{{route("admin.testimonials.create")}}">Müşteri Yorumu Ekle</a></li>
+                    <li><a class="nav-link" href="{{route("admin.testimonials.index")}}">Müşteri Yorumu Listele</a></li>
+
+                </ul>
+            </li>
+            @endpermission
             @permission("Sidebar Show","Users")
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Kullanıcılar</span></a>
@@ -129,21 +224,9 @@
                 </ul>
             </li>
 
-            <li class="menu-header">Müdüller</li>
-
-            @permission("Sidebar Show","Modules")
-            {!! adminHook()->doAction("admin_menu_bar") !!}
-            @endpermission
 
 
             <li class="menu-header">Diğer Özellikler</li>
-
-
-            <li class="nav-item">
-                <a href="{{route("admin.base_modules.index")}}" class="nav-link"><i class="fas fa-plug"></i><span>Modül İşlemleri</span></a>
-            </li>
-
-
 
 
             <li class="nav-item dropdown">

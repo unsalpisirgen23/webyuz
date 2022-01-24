@@ -15,7 +15,6 @@ class CreateComponentWidgetsTable extends Migration
     {
         Schema::create('component_widgets', function (Blueprint $table) {
             $table->id();
-            $table->string("component_title","250")->nullable();
             $table->string("component_name","250")->nullable();
             $table->string("component_group","100")->nullable();
             $table->integer("user_id")->nullable();

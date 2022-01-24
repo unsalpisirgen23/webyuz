@@ -14,4 +14,9 @@ class PageController extends Controller
             return Template::view("page_detail",['page'=>$page]);
         }
 
+        public function detail($link)
+        {
+            return view("templates.page_detail",['link'=>$link]);
+        }
+
 }

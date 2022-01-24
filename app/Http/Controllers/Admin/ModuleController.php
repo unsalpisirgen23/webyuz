@@ -6,14 +6,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class ModuleController extends Controller
 {
 
     public function index()
     {
-        $modules = DB::table("modules")->get();
-        return  view("admin.modules.index",['modules'=>$modules]);
+        if (!Schema::hasTable("modules"))
+        {
+            $modules = get_site_database()->table("modules")->get();
+            Artisan::call("route:clear");
+            return  view("admin.modules.index",['modules'=>$modules]);
+        }
     }
 
     /**
@@ -61,18 +66,17 @@ class ModuleController extends Controller
 
     public function update(Request $request, $id)
     {
-        $dbModule = DB::table("modules")->where("id","=",$id)->first();
-
+        $dbModule = get_site_database()->table("modules")->where("id","=",$id)->first();
         if ($request->post("is_status")==1)
         {
             if ($request->post("status") == 1)
             {
-                Artisan::call("optimize");
-                $is = DB::table("modules")->where("id","=",$id)->update([
+                $is = get_site_database()->table("modules")->where("id","=",$id)->update([
                     'module_status'=>0,
+                    'module_install'=>0,
                     "updated_at"=>date('Y-m-d H:i:s')
                 ]);
-                Artisan::call("optimize");
+                Artisan::call("route:clear");
                 if ($is)
                 {
                     return  redirect()->route("admin.base_modules.index")->with('Tebrikler modül başarıyla aktif oldu');
@@ -80,10 +84,12 @@ class ModuleController extends Controller
             }
             if ($request->post("status") == 0)
             {
-                $is = DB::table("modules")->where("id","=",$id)->update([
+                $is = get_site_database()->table("modules")->where("id","=",$id)->update([
                     'module_status'=>1,
+                    'module_install'=>1,
                     "updated_at"=>date('Y-m-d H:i:s')
                 ]);
+                Artisan::call("route:clear");
                 if ($is)
                 {
                        return  redirect()->route("admin.base_modules.index")->with('Tebrikler modül başarıyla aktif oldu');
@@ -115,14 +121,13 @@ class ModuleController extends Controller
                         {
                             $classMigration = new $classMigration();
                             if ($request->post("install") == 1){
-
                                 $classMigration->up();
-                                DB::table("modules")->where("id","=",$id)->update(['module_install'=>1]);
+                                get_site_database()->table("modules")->where("id","=",$id)->update(['module_install'=>1]);
                                 return  redirect()->route("admin.base_modules.index")->with("success",'Tebrikler modül başarıyla kuruldu');
                             }
                             if ($request->post("install") == 0){
                                 $classMigration->down();
-                                DB::table("modules")->where("id","=",$id)->update(['module_install'=>0,"module_status"=>0]);
+                                get_site_database()->table("modules")->where("id","=",$id)->update(['module_install'=>0,"module_status"=>0]);
                                 return  redirect()->route("admin.base_modules.index")->with("success",'Tebrikler modül başarıyla kaldırıldı');
                             }
                         }else{

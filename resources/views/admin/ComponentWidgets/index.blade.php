@@ -16,30 +16,19 @@
                     <table class="table table-striped mb-0" id="myTable">
                         <thead>
                         <tr>
-                            <th>Başlık</th>
                             <th>Bileşen</th>
-                            <th>Grup</th>
-                            <th>İşlemler</th>
+                            <th>Sil</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($customFields  as $customField)
                             <tr style="border-bottom: solid 1px #ddd;min-height: 30px;">
 
-                                <td style="min-height: 30px;padding: 0px;font-size: 16px;">
-                                    {{$customField->component_title}}
-                                </td>
-
-                                <td style="overflow: hidden;min-height: 30px;padding: 0px;font-size: 16px;">
+                                <td style="overflow: hidden;min-height: 30px;padding: 0px;font-size: 16px;padding-left: 10px;">
                                     {!! $customField->component_name !!}
                                 </td>
 
-                                <td style="overflow: hidden;min-height: 30px;padding: 0px;font-size: 16px;">
-                                    {!! $customField->component_group !!}
-                                </td>
-
-                                <td style="min-height: 30px;padding: 0px;width: 200px;">
-                                    <a class="btn btn-primary btn-action m-0 ml-4"  href="{{ route("admin.ComponentWidgets.edit",$customField->id)}}" onclick="confirm('Bu düzenlemek istediğinize eminmisiniz?') ? null :event.preventDefault() " title="Düzenle"><i class="fas fa-pencil-alt"></i></a>
+                                <td style="min-height: 30px;padding: 0px;width: 77px;">
                                     <!-- Bu alan ajax yapılacak -->
                                     <a class="btn btn-danger btn-action m-0 ml-4" href="" onclick="event.preventDefault();  confirm('Bu silmek istediğinize eminmisiniz?') ? document.getElementById('page-form-{{$customField->id}}').submit() : null " title="Sil"><i class="fas fa-trash"></i></a>
                                     <form id="page-form-{{$customField->id}}" action="{{ route("admin.ComponentWidgets.destroy",$customField->id)}}" method="POST" style="display: none;">
@@ -75,11 +64,11 @@
     <script>
         @if(session("error"))
         Swal.fire({
-            position: 'top-end',
-            icon: 'success',
+            position: 'top',
+            icon: 'error',
             title: '{{session("error")}}',
             showConfirmButton: false,
-            timer: 1500
+            timer: 2000
         })
         @endif
         @if(session("success"))

@@ -69,21 +69,6 @@ class RouteServiceProvider extends ServiceProvider
 
                             Route::group(["as"=>"admin."],base_path('routes/admin.php'));
 
-
-
-                            if (Schema::hasTable("modules")){
-                                $isModule = DB::table("modules")
-                                    ->where("module_status","=",1)
-                                    ->where("module_install","=",1)
-                                    ->get();
-                                if ($isModule->count() > 0)
-                                {
-                                    foreach ($isModule as $module)
-                                    {
-                                        Route::group(['prefix'=>"/module/".$module->module_namespace."","middleware"=>"auth",'as'=>"modules.".$module->module_namespace."."],base_path("Modules")."/".ucwords($module->module_name)."/routes/admin.php");
-                                    }
-                                }
-                            }
                         });
                 });
         });

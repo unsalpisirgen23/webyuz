@@ -33,37 +33,21 @@
     @component("admin.ComponentWidgets.components.card-form",['title'=>"Tema Bileşeni Ekle","route"=>"store"])
 
 
-        <div class="form-group row mb-4">
-            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Başlık</label>
-            <div class="col-sm-12 col-md-7">
-                <input type="text" class="form-control" name="component_title">
-            </div>
-        </div>
-
 
         <div class="form-group row mb-4">
             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Bileşenler</label>
             <div class="col-sm-12 col-md-7 h-100">
                 <select name="component_name" id="template_id" class="form-control">
                     @foreach ($hooks as $hook=>$toHook)
-                        <option value="{!! $hook !!}">{!! $hook !!}</option>
+                        @if(\Illuminate\Support\Facades\DB::table("component_widgets")->where("component_name","=",$hook)->get()->count() < 1 && $hook != "get_template_widget_group")
+                             <option value="{!! $hook !!}">{!! $hook !!}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
         </div>
 
 
-
-        <div class="form-group row mb-4">
-            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Grup</label>
-            <div class="col-sm-12 col-md-7 h-100">
-                <select name="component_group" id="template_id" class="form-control">
-                    <option value="headers">Üst Kısımlar</option>
-                    <option value="contents">Orta Kısımlar</option>
-                    <option value="footers">Alt Kısımlar</option>
-                </select>
-            </div>
-        </div>
 
 
 

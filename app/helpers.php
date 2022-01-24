@@ -27,7 +27,7 @@ function get_asset($value = '')
 
 function get_public_assets($value)
 {
-   return base_url()."/assets/".$value;
+   return "/assets/".$value;
 }
 
 
@@ -300,7 +300,6 @@ function getHeaderNavbarMenu2($menus = [],$path = "")
 addAction('get_header_nav_menu','get_header_nav_menu_function');
 
 
-
     function get_header_nav_menu_function($menus = [])
     {
         $i = 0;
@@ -319,9 +318,7 @@ addAction('get_header_nav_menu','get_header_nav_menu_function');
                 echo '</li>';
                 $i++;
             }
-
         }
-
     }
 
 
@@ -583,6 +580,15 @@ templateHook()->addAction("portfolio_section",\App\System\Components\PortfolioSe
 templateHook()->addAction("clients-section",\App\System\Components\ClientsSection::class);
 templateHook()->addAction("others_up_button",\App\System\Components\UpButton::class);
 templateHook()->addAction("footer",\App\System\Components\Footer::class);
+templateHook()->addAction("about-page",\App\System\Components\AboutPage::class);
+templateHook()->addAction("our-team",\App\System\Components\OurTeam::class);
+templateHook()->addAction("features",\App\System\Components\Features::class);
+templateHook()->addAction("testimonials-list",\App\System\Components\TestimonialsList::class);
+templateHook()->addAction("contact",\App\System\Components\Contact::class);
+
+
+
+
 
 addAction("custom_style","style_function");
 
@@ -655,9 +661,7 @@ function get_template_widget_group_function($params = ['action_order'=>""])
             ->where("sites.domain","=",$domain)
             ->get(['template_hooks_component_widgets.id as thcw_id',
                 'template_hooks_component_widgets.*',
-                'component_widgets.component_title as component_title',
                 'component_widgets.component_name as component_name',
-                'component_widgets.component_group as component_group',
                 'template_hooks.action_title as action_title',
                 'template_hooks.action_group as action_group'
             ]);
@@ -674,8 +678,21 @@ function get_site_database()
     $domain = request()->getHost();
     $site = DB::table("sites")->where("sites.domain","=",$domain)->first();
     if ($site){
+        if (isset($site->database_name))
+        {
+            config()->set("database.connections.user_database.database",$site->database_name);
+            return  DB::connection("user_database");
+        }
+    }
+}
+
+function get_site_database_schema()
+{
+    $domain = request()->getHost();
+    $site = DB::table("sites")->where("sites.domain","=",$domain)->first();
+    if ($site){
         config()->set("database.connections.user_database.database",$site->database_name);
-       return  DB::connection("user_database");
+       return  Schema::connection("user_database");
     }
 }
 
@@ -725,3 +742,112 @@ function user_data($id){
     }
 
 }
+
+function admin_contact_menu_bar()
+{
+    admin_sidebar_menu("İletişim Formu","fas fa-envelope",[
+        [
+            'link'=>route("modules.contact.index"),
+            'title'=>"Mesajlar"
+        ],
+
+    ]);
+}
+
+adminHook()->addAction("admin_menu_bar","admin_contact_menu_bar",44);
+
+
+function admin_faqs_menu_bar()
+{
+//
+    admin_sidebar_menu("S.S.S.","far fa-question-circle",[
+        [
+            'link'=> route("admin.faqs.create"),
+            'title'=>"SSS Ekle",
+        ],
+        [
+            'link'=>route("admin.faqs.index"),
+            'title'=>"SSS Listele",
+        ],
+    ]);
+return "";
+}
+
+
+
+adminHook()->addAction("admin_menu_bar","admin_faqs_menu_bar",64);
+
+
+
+function services_route($path, $data = [])
+{
+    return route("admin.servicesTable." . $path, $data);
+}
+
+function services_go_route($path, $data = [])
+{
+    return redirect()->route("admin.servicesTable." . $path, $data);
+}
+
+
+function services_view($path, $data = [])
+{
+    return view("admin.servicesTable." . $path, $data);
+}
+
+
+function admin_services_menu_bar_function()
+{
+    admin_sidebar_menu("Hizmetler", "fas fa-cube", [
+        [
+            'link' => route("admin.servicesTable.create"),
+            'title' => "Bileşen Ekle"
+        ],
+        [
+            'link' => services_route("index"),
+            'title' => "Bileşen Listele"
+        ],
+    ]);
+}
+
+
+adminHook()->addAction("admin_menu_bar", "admin_services_menu_bar_function", 32);
+
+
+
+
+function teams_route($path, $data = [])
+{
+    return route("admin.teams." . $path, $data);
+}
+
+function teams_go_route($path, $data = [])
+{
+    return redirect()->route("admin.teams." . $path, $data);
+}
+
+
+function teams_view($path, $data = [])
+{
+    return view("admin.teams." . $path, $data);
+}
+
+
+function admin_teams_menu_bar_function()
+{
+    admin_sidebar_menu("Ekibimiz", "fas fa-users", [
+        [
+            'link' => route("admin.teams.create"),
+            'title' => "Ekip Ekle"
+        ],
+        [
+            'link' => route("admin.teams.index"),
+            'title' => "Ekip Listele"
+        ],
+    ]);
+}
+
+
+adminHook()->addAction("admin_menu_bar", "admin_teams_menu_bar_function", 32);
+
+

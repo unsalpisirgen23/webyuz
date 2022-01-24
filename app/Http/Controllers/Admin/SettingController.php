@@ -19,14 +19,14 @@ class SettingController extends Controller
     public function appearance_update(Request $request)
     {
              $data = $request->post("");
-            DB::connection("user_database")->table("settings")->update($data);
+             get_site_database()->table("settings")->update($data);
         return redirect()->back()->with("success","Görünüm ayarları başarıyla kaydedildi.");
     }
 
 
     public function site_setting_edit()
     {
-       $site_settings = DB::connection("user_database")->table("settings")->first();
+       $site_settings = get_site_database()->table("settings")->first();
         return view("admin.settings.site_setting",['settings' => $site_settings]);
     }
 
@@ -34,11 +34,11 @@ class SettingController extends Controller
     {
          $data = $request->post("setting");
         unset($data["_token"]);
-        if (DB::connection("user_database")->table("settings")->get()->count() < 1)
+        if (get_site_database()->table("settings")->get()->count() < 1)
         {
-           DB::connection("user_database")->table("settings")->insert($data);
+            get_site_database()->table("settings")->insert($data);
         }else{
-            $update =   DB::connection("user_database")->table("settings")->update($data);
+            $update =   get_site_database()->table("settings")->update($data);
         }
       return redirect()->back()->with("success","Site ayarları başarıyla kaydedildi.");
     }

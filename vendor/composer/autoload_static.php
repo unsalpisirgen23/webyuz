@@ -4,31 +4,31 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
+class ComposerStaticInit1017f08ef44923da11f0269930ca3a76
 {
     public static $files = array (
-        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -196,8 +196,8 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Yajra\\DataTables\\' => 
         array (
@@ -345,8 +345,8 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -615,7 +615,11 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
         'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
         'App\\Http\\Controllers\\Admin\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CommentController.php',
         'App\\Http\\Controllers\\Admin\\ComponentWidgetController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ComponentWidgetController.php',
+        'App\\Http\\Controllers\\Admin\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ContactController.php',
         'App\\Http\\Controllers\\Admin\\DesignController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DesignController.php',
+        'App\\Http\\Controllers\\Admin\\FaqController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FaqController.php',
+        'App\\Http\\Controllers\\Admin\\GalleryCategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GalleryCategoriesController.php',
+        'App\\Http\\Controllers\\Admin\\GalleryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GalleryController.php',
         'App\\Http\\Controllers\\Admin\\Layout\\MenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Layout/MenuController.php',
         'App\\Http\\Controllers\\Admin\\MenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/MenuController.php',
         'App\\Http\\Controllers\\Admin\\ModuleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ModuleController.php',
@@ -623,16 +627,20 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
         'App\\Http\\Controllers\\Admin\\Notification' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Notification.php',
         'App\\Http\\Controllers\\Admin\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PageController.php',
         'App\\Http\\Controllers\\Admin\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PostController.php',
+        'App\\Http\\Controllers\\Admin\\ScrollingPicturesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ScrollingPicturesController.php',
         'App\\Http\\Controllers\\Admin\\SecurityPolicyController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SecurityPolicyController.php',
+        'App\\Http\\Controllers\\Admin\\ServicesTableController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ServicesTableController.php',
         'App\\Http\\Controllers\\Admin\\SettingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SettingController.php',
         'App\\Http\\Controllers\\Admin\\SettlementController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SettlementController.php',
         'App\\Http\\Controllers\\Admin\\SiteBuilderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SiteBuilderController.php',
-        'App\\Http\\Controllers\\Admin\\SiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SiteController.php',
+        'App\\Http\\Controllers\\Admin\\SliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SliderController.php',
         'App\\Http\\Controllers\\Admin\\TagController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TagController.php',
+        'App\\Http\\Controllers\\Admin\\TeamsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TeamsController.php',
         'App\\Http\\Controllers\\Admin\\TemplateController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TemplateController.php',
         'App\\Http\\Controllers\\Admin\\TemplateHookController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TemplateHookController.php',
         'App\\Http\\Controllers\\Admin\\TemplateHooksComponentWidgetController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TemplateHooksComponentWidgetController.php',
         'App\\Http\\Controllers\\Admin\\TemplatesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TemplatesController.php',
+        'App\\Http\\Controllers\\Admin\\TestimonialsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TestimonialsController.php',
         'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Admin\\UserRoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserRoleController.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
@@ -654,12 +662,18 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\Admin\\CategoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/CategoryRequest.php',
         'App\\Http\\Requests\\Admin\\CommentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/CommentRequest.php',
+        'App\\Http\\Requests\\Admin\\ContactRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/ContactRequest.php',
+        'App\\Http\\Requests\\Admin\\FaqRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/FaqRequest.php',
+        'App\\Http\\Requests\\Admin\\GalleryCategoriesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/GalleryCategoriesRequest.php',
+        'App\\Http\\Requests\\Admin\\GalleryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/GalleryRequest.php',
         'App\\Http\\Requests\\Admin\\MenuRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/MenuRequest.php',
         'App\\Http\\Requests\\Admin\\MultimediaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/MultimediaRequest.php',
         'App\\Http\\Requests\\Admin\\PageRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/PageRequest.php',
         'App\\Http\\Requests\\Admin\\PostRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/PostRequest.php',
         'App\\Http\\Requests\\Admin\\SidebarMenuRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/SidebarMenuRequest.php',
+        'App\\Http\\Requests\\Admin\\SliderRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/SliderRequest.php',
         'App\\Http\\Requests\\Admin\\TagRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/TagRequest.php',
+        'App\\Http\\Requests\\Admin\\TestimonialsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/TestimonialsRequest.php',
         'App\\Http\\Requests\\Admin\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Admin/UserRequest.php',
         'App\\Http\\Requests\\AuthRequest' => __DIR__ . '/../..' . '/app/Http/Requests/AuthRequest.php',
         'App\\Http\\Requests\\BaseRequest' => __DIR__ . '/../..' . '/app/Http/Requests/BaseRequest.php',
@@ -680,6 +694,8 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
         'App\\Models\\ComponentWidgetContent' => __DIR__ . '/../..' . '/app/Models/ComponentWidgetContent.php',
+        'App\\Models\\Gallery' => __DIR__ . '/../..' . '/app/Models/Gallery.php',
+        'App\\Models\\GalleryCategories' => __DIR__ . '/../..' . '/app/Models/GalleryCategories.php',
         'App\\Models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
         'App\\Models\\Module' => __DIR__ . '/../..' . '/app/Models/Module.php',
         'App\\Models\\Multimedia' => __DIR__ . '/../..' . '/app/Models/Multimedia.php',
@@ -803,6 +819,7 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
         'Carbon\\FactoryImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/FactoryImmutable.php',
         'Carbon\\Language' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Language.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
+        'Carbon\\PHPStan\\AbstractMacro' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/AbstractMacro.php',
         'Carbon\\PHPStan\\Macro' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/Macro.php',
         'Carbon\\PHPStan\\MacroExtension' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/MacroExtension.php',
         'Carbon\\PHPStan\\MacroScanner' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/PHPStan/MacroScanner.php',
@@ -3485,39 +3502,6 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
         'Mockery\\Undefined' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Undefined.php',
         'Mockery\\VerificationDirector' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationDirector.php',
         'Mockery\\VerificationExpectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationExpectation.php',
-        'Modules\\Contact\\ContactRequest' => __DIR__ . '/../..' . '/Modules/Contact/ContactRequest.php',
-        'Modules\\Contact\\Controllers\\ContactController' => __DIR__ . '/../..' . '/Modules/Contact/Controllers/ContactController.php',
-        'Modules\\Contact\\Installation' => __DIR__ . '/../..' . '/Modules/Contact/Installation.php',
-        'Modules\\Contact\\Models\\Contact' => __DIR__ . '/../..' . '/Modules/Contact/Models/Contact.php',
-        'Modules\\Faqs\\Controllers\\FaqController' => __DIR__ . '/../..' . '/Modules/Faqs/Controllers/FaqController.php',
-        'Modules\\Faqs\\FaqRequest' => __DIR__ . '/../..' . '/Modules/Faqs/FaqRequest.php',
-        'Modules\\Faqs\\Installation' => __DIR__ . '/../..' . '/Modules/Faqs/Installation.php',
-        'Modules\\Faqs\\Models\\Faqs' => __DIR__ . '/../..' . '/Modules/Faqs/Models/Faqs.php',
-        'Modules\\Gallery\\Controllers\\GalleryCategoriesController' => __DIR__ . '/../..' . '/Modules/Gallery/Controllers/GalleryCategoriesController.php',
-        'Modules\\Gallery\\Controllers\\GalleryController' => __DIR__ . '/../..' . '/Modules/Gallery/Controllers/GalleryController.php',
-        'Modules\\Gallery\\GalleryCategoriesRequest' => __DIR__ . '/../..' . '/Modules/Gallery/GalleryCategoriesRequest.php',
-        'Modules\\Gallery\\GalleryRequest' => __DIR__ . '/../..' . '/Modules/Gallery/GalleryRequest.php',
-        'Modules\\Gallery\\Installation' => __DIR__ . '/../..' . '/Modules/Gallery/Installation.php',
-        'Modules\\Gallery\\Models\\Gallery' => __DIR__ . '/../..' . '/Modules/Gallery/Models/Gallery.php',
-        'Modules\\Gallery\\Models\\GalleryCategories' => __DIR__ . '/../..' . '/Modules/Gallery/Models/GalleryCategories.php',
-        'Modules\\ScrollingPictures\\Controllers\\ScrollingPicturesController' => __DIR__ . '/../..' . '/Modules/ScrollingPictures/Controllers/ScrollingPicturesController.php',
-        'Modules\\ScrollingPictures\\Installation' => __DIR__ . '/../..' . '/Modules/ScrollingPictures/Installation.php',
-        'Modules\\ScrollingPictures\\Models\\ScrollingPictures' => __DIR__ . '/../..' . '/Modules/ScrollingPictures/Models/ScrollingPictures.php',
-        'Modules\\ScrollingPictures\\SliderRequest' => __DIR__ . '/../..' . '/Modules/ScrollingPictures/SliderRequest.php',
-        'Modules\\Services\\Controllers\\ServicesController' => __DIR__ . '/../..' . '/Modules/Services/Controllers/ServicesController.php',
-        'Modules\\Services\\Installation' => __DIR__ . '/../..' . '/Modules/Services/Installation.php',
-        'Modules\\Services\\Models\\CustomFields' => __DIR__ . '/../..' . '/Modules/Services/Models/CustomFields.php',
-        'Modules\\Sliders\\Controllers\\SliderController' => __DIR__ . '/../..' . '/Modules/Sliders/Controllers/SliderController.php',
-        'Modules\\Sliders\\Installation' => __DIR__ . '/../..' . '/Modules/Sliders/Installation.php',
-        'Modules\\Sliders\\Models\\Slider' => __DIR__ . '/../..' . '/Modules/Sliders/Models/Slider.php',
-        'Modules\\Sliders\\SliderRequest' => __DIR__ . '/../..' . '/Modules/Sliders/SliderRequest.php',
-        'Modules\\Teams\\Controllers\\TeamsController' => __DIR__ . '/../..' . '/Modules/Teams/Controllers/TeamsController.php',
-        'Modules\\Teams\\Installation' => __DIR__ . '/../..' . '/Modules/Teams/Installation.php',
-        'Modules\\Teams\\Models\\Teams' => __DIR__ . '/../..' . '/Modules/Teams/Models/Teams.php',
-        'Modules\\Testimonials\\Controllers\\TestimonialsController' => __DIR__ . '/../..' . '/Modules/Testimonials/Controllers/TestimonialsController.php',
-        'Modules\\Testimonials\\Installation' => __DIR__ . '/../..' . '/Modules/Testimonials/Installation.php',
-        'Modules\\Testimonials\\Models\\Testimonials' => __DIR__ . '/../..' . '/Modules/Testimonials/Models/Testimonials.php',
-        'Modules\\Testimonials\\TestimonialsRequest' => __DIR__ . '/../..' . '/Modules/Testimonials/TestimonialsRequest.php',
         'Monolog\\DateTimeImmutable' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/DateTimeImmutable.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
         'Monolog\\Formatter\\ChromePHPFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',
@@ -5941,10 +5925,10 @@ class ComposerStaticInit39ad6948363c2e9dd0f1353713664a61
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit39ad6948363c2e9dd0f1353713664a61::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit39ad6948363c2e9dd0f1353713664a61::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit39ad6948363c2e9dd0f1353713664a61::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit39ad6948363c2e9dd0f1353713664a61::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1017f08ef44923da11f0269930ca3a76::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1017f08ef44923da11f0269930ca3a76::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit1017f08ef44923da11f0269930ca3a76::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit1017f08ef44923da11f0269930ca3a76::$classMap;
 
         }, null, ClassLoader::class);
     }
